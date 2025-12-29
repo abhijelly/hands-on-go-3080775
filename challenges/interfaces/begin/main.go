@@ -16,6 +16,20 @@ type counter interface {
 
 type letterCounter struct{ identifier string }
 
+func (lc letterCounter) name() string {
+	return lc.identifier
+}
+
+func (lc letterCounter) count(input string) int {
+	count := 0
+	for _, c := range input {
+		if ('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z') {
+			count++
+		}
+	}
+	return count
+}
+
 type numberCounter struct{ designation string }
 
 type symbolCounter struct{ label string }
@@ -52,10 +66,13 @@ func main() {
 
 	// convert the bytes to a string
 	data := string(bs)
-	spew.Dump(data)
+	//spew.Dump(data)
+
+	lc := letterCounter{identifier: "LCinterface"}
 
 	// call doAnalysis and pass in the data and the counters
+	analysis := doAnalysis(data, lc)
 
 	// dump the map to the console using the spew package
-	// spew.Dump(analysis)
+	spew.Dump(analysis)
 }
