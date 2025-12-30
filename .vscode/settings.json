@@ -16,8 +16,8 @@
   "explorer.openEditors.visible": 0,
   "files.autoSave": "afterDelay",
   "screencastMode.onlyKeyboardShortcuts": true,
-  "terminal.integrated.fontSize": 18,
-  "workbench.colorTheme": "Visual Studio Dark",
+  "terminal.integrated.fontSize": 14,
+  "workbench.colorTheme": "Idea intellij light theme",
   "workbench.fontAliasing": "antialiased",
   "workbench.statusBar.visible": true
 }
